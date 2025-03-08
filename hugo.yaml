@@ -4,11 +4,9 @@ title: Story Hour Improv
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu
 
 # Language settings
-contentDir: content/en
+contentDir: content
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
-# Useful when translating.
-enableMissingTranslationPlaceholders: true
 
 enableRobotsTXT: true
 
@@ -48,26 +46,7 @@ languages:
     languageName: English
     title: Story Hour Improv
     params:
-      description: A Docsy example site
-  # cSpell:disable
-  'no':
-    languageName: Norsk
-    contentDir: content/no
-    title: Gulldoks
-    params:
-      description: Docsy er operativsystem for skyen
-      time_format_default: 02.01.2006
-      time_format_blog: 02.01.2006
-  fa:
-    languageDirection: rtl
-    languageName: "فارسی (Persian)"
-    contentDir: content/fa
-    title: "اسناد گلدی"
-    params:
-      description: "یک نمونه برای پوسته داکسی"
-      time_format_default: 2006.01.02
-      time_format_blog: 2006.01.02
-  # cSpell:enable
+      description: Story Hour Improv
 
 markup:
   goldmark:
