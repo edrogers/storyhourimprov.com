@@ -41,6 +41,15 @@ jobs:
           hugo-version: '0.120.4'
           extended: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install postcss postcss-cli autoprefixer
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
