@@ -1,4 +1,9 @@
-<nav class="td-navbar js-navbar-scroll td-navbar-cover" data-bs-theme="dark" style="background-color: transparent !important;">
+{{ $cover := and
+    (.HasShortcode "blocks/cover")
+    (not .Site.Params.ui.navbar_translucent_over_cover_disable)
+-}}
+
+<nav class="td-navbar js-navbar-scroll {{- if $cover }} td-navbar-cover {{- end }}" data-bs-theme="dark" style="background-color: transparent !important;">
 <div class="container-fluid flex-column flex-md-row">
   <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
     <span class="navbar-brand__logo navbar-logo">
