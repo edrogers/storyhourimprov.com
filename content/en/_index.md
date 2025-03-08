@@ -1,26 +1,23 @@
 ---
-title: Goldydocs
+title: Story Hour
 ---
 
-{{< blocks/cover title="Welcome to Goldydocs: A Docsy Example Project!" image_anchor="top" height="full" >}}
+{{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  Calendar <i class="fas fa-calendar-days ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
-  Download <i class="fab fa-github ms-2 "></i>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://www.tickettailor.com/events/readingtheimprovisedmusical/1550364">
+  Buy Tickets <i class="far fa-ticket ms-2 "></i>
 </a>
-<p class="lead mt-5">Porridge temperature assessment &mdash; in the cloud!</p>
+<p class="lead mt-5">An interactive adventure in musical theater!</p>
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
 
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
+Join us for "Story Time: The Improv Musical," a delightful event designed for families with children ages 8 and under! Every performance is centered on a different children's book. We invite you to read the book with your little one beforehand. During the show, we’ll gather creative input from our young readers and transform their ideas into an on-the-spot musical performance.
 
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+Expect a fun, funny, engaging, and delightfully silly experience that the whole family will love. Featuring an experienced and talented Madison-based cast, this unique event is a celebration of storytelling, creativity, and the magic of improvisation. Doors open at 9:40am, and street parking is the only option, so please budget a bit of extra time. Don’t miss out on this interactive adventure in musical theater!
 {{% /blocks/lead %}}
 
 
