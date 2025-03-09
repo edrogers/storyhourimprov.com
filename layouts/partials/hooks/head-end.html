@@ -68,6 +68,11 @@ header *::after {
 <!-- Add a script to force transparency after page load -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Force HTTPS redirect
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
+        window.location.href = window.location.href.replace('http:', 'https:');
+    }
+
     // Get all navbar elements
     const navbarElements = document.querySelectorAll('.td-navbar, .navbar, .container-fluid, #main_navbar, .td-navbar-nav-scroll');
     
