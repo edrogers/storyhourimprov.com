@@ -1,0 +1,100 @@
+<!-- Custom styles to fix navbar white bar issue -->
+<style>
+/* Super aggressive overrides to ensure transparent navbar */
+.td-navbar,
+.js-navbar-scroll,
+.td-navbar-cover,
+.navbar,
+.navbar-dark,
+.navbar-expand-lg,
+.td-navbar-nav-scroll,
+#main_navbar,
+.container-fluid,
+.flex-column,
+.flex-md-row,
+.navbar-brand,
+.td-navbar::before,
+.td-navbar::after,
+.navbar-collapse,
+.collapse,
+.navbar-collapse.collapse,
+.collapsing,
+.navbar-toggler,
+.navbar-toggler-icon,
+header nav,
+header div,
+header *::before,
+header *::after {
+    background-color: transparent !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+/* Handle any possible pseudo-elements */
+.td-navbar::before,
+.td-navbar::after,
+.js-navbar-scroll::before,
+.js-navbar-scroll::after,
+.navbar::before,
+.navbar::after,
+.navbar *::before,
+.navbar *::after,
+header *::before,
+header *::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure site title is visible on all backgrounds */
+.navbar-brand__name {
+    font-family: 'Luckiest Guy', sans-serif !important;
+    color: white !important;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Force transparency at all viewport sizes */
+@media (max-width: 991.98px) {
+    .navbar,
+    .navbar * {
+        background-color: transparent !important;
+        background: transparent !important;
+    }
+}
+</style>
+
+<!-- Add a script to force transparency after page load -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navbar elements
+    const navbarElements = document.querySelectorAll('.td-navbar, .navbar, .container-fluid, #main_navbar, .td-navbar-nav-scroll');
+    
+    // Force transparency on all of them
+    navbarElements.forEach(function(el) {
+        el.style.backgroundColor = 'transparent';
+        el.style.background = 'transparent';
+        el.style.boxShadow = 'none';
+        el.style.border = 'none';
+    });
+    
+    // Also add an observer to handle dynamic changes
+    const observer = new MutationObserver(function() {
+        navbarElements.forEach(function(el) {
+            el.style.backgroundColor = 'transparent';
+            el.style.background = 'transparent';
+            el.style.boxShadow = 'none';
+            el.style.border = 'none';
+        });
+    });
+    
+    // Observe the navbar for any changes that might affect styling
+    navbarElements.forEach(function(el) {
+        observer.observe(el, { 
+            attributes: true, 
+            attributeFilter: ['style', 'class']
+        });
+    });
+});
+</script>

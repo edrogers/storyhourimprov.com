@@ -6,15 +6,54 @@ Add styles or override variables from the theme here.
 
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-/* Make navbar transparent and ensure it stays that way */
+/* Make navbar transparent and ensure it stays that way across all devices and states */
 .td-navbar {
     background-color: transparent !important;
     box-shadow: none !important;
 }
 
+/* Fix for mobile white bar */
+.td-navbar-nav-scroll, 
+#main_navbar,
+.js-navbar-scroll,
+.td-navbar::before,
+.td-navbar::after {
+    background-color: transparent !important;
+}
+
+/* Fix for navbar button toggle background */
+.navbar-toggler {
+    background-color: transparent !important;
+    border: none !important;
+}
+
 /* Remove any background effects when hovering over navbar items */
 .td-navbar .nav-link:hover {
     background-color: transparent !important;
+}
+
+/* Ensure the navbar stays transparent at all screen sizes */
+@media (max-width: 991.98px) {
+    .td-navbar,
+    .td-navbar-nav-scroll,
+    #main_navbar,
+    .navbar-collapse,
+    .container-fluid,
+    .js-navbar-scroll {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    /* Prevent white background on navbar collapse */
+    .navbar-collapse {
+        background-color: transparent !important;
+    }
+    
+    /* Make navbar title more visible on mobile */
+    .navbar-brand__name {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+    }
 }
 
 /* Keep cover styling */
