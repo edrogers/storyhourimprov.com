@@ -3,7 +3,7 @@ title: Story Hour
 ---
 
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
+<a class="btn btn-lg btn-primary me-3 mb-4" href="https://calendar.google.com/" target="_blank">
   Calendar <i class="fas fa-calendar-days ms-2"></i>
 </a>
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://www.tickettailor.com/events/readingtheimprovisedmusical/1550364">
