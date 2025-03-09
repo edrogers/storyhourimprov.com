@@ -1,7 +1,22 @@
 {{ define "main" -}}
-<div class="td-content">
-  <h1>Not found</h1>
-  <p>Oops! This page doesn't exist. Try going back to the <a href="{{ "" | relURL }}">home page</a>.</p>
-  <p>You can learn how to make a 404 page like this in <a href="https://gohugo.io/templates/404/">Custom 404 Pages</a>.</p>
+<div class="td-content text-center" style="padding: 5rem 2rem;">
+  <h1 style="font-family: 'Luckiest Guy', sans-serif; font-size: 4rem; margin-bottom: 2rem;">Oh no! Page not found</h1>
+  
+  <p class="lead" style="font-size: 1.5rem; margin-bottom: 3rem;">
+    Looks like this story took an unexpected turn! The page you're looking for doesn't exist.
+  </p>
+  
+  <img src="{{ "images/cast/headshot_3.webp" | relURL }}" alt="Confused cast member" 
+       style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 3rem; border: 5px solid #f8c630;">
+  
+  <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+    Don't worry, every story has a happy ending. Why not go back to our 
+    <a href="{{ "" | relURL }}" style="color: #0366d6; text-decoration: underline; font-weight: bold;">home page</a> 
+    and start a new adventure?
+  </p>
+  
+  <a href="{{ "" | relURL }}" class="btn btn-lg btn-primary" style="margin-top: 1rem;">
+    Back to Home <i class="fas fa-home ms-2"></i>
+  </a>
 </div>
 {{- end }}
