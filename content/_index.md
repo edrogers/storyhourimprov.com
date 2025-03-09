@@ -21,6 +21,8 @@ Expect a fun, funny, engaging, and delightfully silly experience that the whole 
 {{% /blocks/lead %}}
 
 
+<!-- This uses the shortcode, not the partial. If you want to edit the cast grid,
+     make changes to layouts/shortcodes/cast-grid.html -->
 {{< cast-grid >}}
 
 
