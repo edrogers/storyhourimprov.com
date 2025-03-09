@@ -157,3 +157,9 @@ Add styles or override variables from the theme here.
     color: #f8c630;
     transform: scale(1.2);
 }
+
+/* Fix tooltip width for email address */
+.tooltip-inner {
+    max-width: 300px !important; /* Wider tooltip */
+    font-size: 0.85rem !important; /* Slightly smaller font */
+}
