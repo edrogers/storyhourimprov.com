@@ -1,5 +1,6 @@
 ---
 title: Story Hour
+---
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
 <div class="sh-hero-logo">
   <img src="/images/Story_Hour_Logo_Design.png" alt="Story Hour: The Improv Musical logo">
@@ -7,14 +8,16 @@ title: Story Hour
 <p class="sh-hero-tagline">An interactive adventure in musical theater!</p>
 <div class="sh-hero-btns">
   <a class="sh-btn-primary" href="https://www.tickettailor.com/events/storyhourimprov/" target="_blank">
-    🎟 Get Tickets
+    Get Tickets
   </a>
   <a class="sh-btn-outline" href="#cast">
-    Meet the Cast ↓
+    Meet the Cast
   </a>
 </div>
 {{< /blocks/cover >}}
+
 {{< next-show >}}
+
 {{% blocks/lead color="white" %}}
 <div class="sh-about">
   <h2 class="sh-section-title">What happens at Story Hour?</h2>
@@ -27,23 +30,24 @@ title: Story Hour
   </div>
 </div>
 {{% /blocks/lead %}}
+
 {{< blocks/section color="white" >}}
 <div class="sh-connect-grid">
   <a class="sh-connect-card sh-connect-card--facebook" href="https://www.facebook.com/storyhourimprov/" target="_blank">
-    <div class="sh-connect-card__icon">👍</div>
+    <div class="sh-connect-card__icon">f</div>
     <div class="sh-connect-card__text">
       <strong>Follow us on Facebook</strong>
       <span>Show announcements &amp; updates</span>
     </div>
-    <div class="sh-connect-card__arrow">→</div>
+    <div class="sh-connect-card__arrow">&rarr;</div>
   </a>
   <div class="sh-connect-card sh-connect-card--teal" id="sh-ml-card" onclick="shToggleML()">
-    <div class="sh-connect-card__icon">✉️</div>
+    <div class="sh-connect-card__icon">@</div>
     <div class="sh-connect-card__text">
       <strong>Join our mailing list</strong>
       <span>Be first to know about new shows</span>
     </div>
-    <div class="sh-connect-card__arrow" id="sh-ml-arrow">→</div>
+    <div class="sh-connect-card__arrow" id="sh-ml-arrow">&rarr;</div>
     <div class="sh-ml-form" id="sh-ml-form">
       <div class="sh-ml-row">
         <input class="sh-ml-input" type="email" id="sh-ml-email" placeholder="your@email.com" onclick="event.stopPropagation()">
@@ -54,4 +58,5 @@ title: Story Hour
   </div>
 </div>
 {{< /blocks/section >}}
+
 {{< cast-grid >}}
