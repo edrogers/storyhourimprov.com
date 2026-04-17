@@ -1,165 +1,388 @@
 /*
+ * Story Hour Improv — custom styles
+ * Brand colors: Navy #1a2e5a | Red-orange #e84d2a | Teal #2aada8 | Gold #f5c842
+ */
 
-Add styles or override variables from the theme here.
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
 
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-
-/* Make navbar transparent and ensure it stays that way across all devices and states */
+/* ─── NAVBAR ─────────────────────────────────────────────────────────────── */
 .td-navbar {
-    background-color: transparent !important;
-    box-shadow: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
-
-/* Fix for mobile white bar */
-.td-navbar-nav-scroll, 
+.td-navbar-nav-scroll,
 #main_navbar,
 .js-navbar-scroll,
 .td-navbar::before,
 .td-navbar::after {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
-
-/* Fix for navbar button toggle background */
 .navbar-toggler {
-    background-color: transparent !important;
-    border: none !important;
+  background-color: transparent !important;
+  border: none !important;
 }
-
-/* Remove any background effects when hovering over navbar items */
 .td-navbar .nav-link:hover {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
-
-/* Ensure the navbar stays transparent at all screen sizes */
 @media (max-width: 991.98px) {
-    .td-navbar,
-    .td-navbar-nav-scroll,
-    #main_navbar,
-    .navbar-collapse,
-    .container-fluid,
-    .js-navbar-scroll {
-        background-color: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-    }
-    
-    /* Prevent white background on navbar collapse */
-    .navbar-collapse {
-        background-color: transparent !important;
-    }
-    
-    /* Make navbar title more visible on mobile */
-    .navbar-brand__name {
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
-    }
+  .td-navbar,
+  .td-navbar-nav-scroll,
+  #main_navbar,
+  .navbar-collapse,
+  .container-fluid,
+  .js-navbar-scroll {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .navbar-collapse {
+    background-color: transparent !important;
+  }
+  .navbar-brand__name {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+  }
 }
 
-/* Keep cover styling */
-#td-cover-block-0 > div > div > div > h1 {
-    font-family: "Luckiest Guy", sans-serif;
-    -webkit-text-stroke: 2px black;
-    font-weight: 400;
-    font-style: normal;
+/* ─── HERO ───────────────────────────────────────────────────────────────── */
+#td-cover-block-0 {
+  background-color: #1a2e5a !important;
+  /* decorative circles */
+  position: relative;
+  overflow: hidden;
+}
+#td-cover-block-0::before {
+  content: '';
+  position: absolute;
+  width: 320px; height: 320px;
+  background: #f5c842;
+  border-radius: 50%;
+  opacity: 0.12;
+  top: -100px; right: -80px;
+  pointer-events: none;
+}
+#td-cover-block-0::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  background: #e84d2a;
+  border-radius: 50%;
+  opacity: 0.12;
+  bottom: -60px; left: -50px;
+  pointer-events: none;
 }
 
-#td-cover-block-0 > div > div > div > div > p.lead.mt-5 {
-    font-size: 2.0rem;
-    -webkit-text-stroke: 1px black;
-    font-weight: 700;
+/* Hero: hide the default h1 (logo replaces it) */
+#td-cover-block-0 h1 {
+  display: none;
 }
 
-/* Cast section styling */
-.td-box--dark.td-box--gradient {
-    background: linear-gradient(180deg, #2a2a2a 0%, #1c1c1c 100%);
+/* Hero logo */
+.sh-hero-logo {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.25rem;
+}
+.sh-hero-logo img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
 }
 
-/* Cast cards styling */
-.feature {
-    height: 100%;
-    transition: transform 0.3s ease;
-    padding: 1.5rem;
-    border-radius: 8px;
+/* Hero tagline */
+.sh-hero-tagline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #8fadd4;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-.feature:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.05);
+/* Hero buttons */
+.sh-hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.sh-btn-primary {
+  background: #e84d2a;
+  color: #fff !important;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+.sh-btn-primary:hover { opacity: 0.88; }
+.sh-btn-outline {
+  background: transparent;
+  color: #fff !important;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.68rem 2rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.35);
+  text-decoration: none !important;
+  display: inline-block;
+  transition: border-color 0.2s;
+}
+.sh-btn-outline:hover { border-color: rgba(255,255,255,0.65); }
+
+/* ─── NEXT SHOW BLOCK ────────────────────────────────────────────────────── */
+.sh-next-show {
+  background: #fff9ef;
+  border: 2.5px solid #f5c842;
+  border-radius: 16px;
+  padding: 1.4rem 1.75rem;
+  margin: 0 auto 0;
+  max-width: 860px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.sh-next-show__icon { font-size: 2.2rem; flex-shrink: 0; }
+.sh-next-show__inner { flex: 1; min-width: 180px; }
+.sh-next-show__label {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e84d2a;
+  margin-bottom: 0.2rem;
+}
+.sh-next-show__title {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.2rem;
+  color: #1a2e5a;
+  margin-bottom: 0.25rem;
+}
+.sh-next-show__details {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  color: #5a6a8a;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+.sh-next-show__btn {
+  background: #e84d2a;
+  color: #fff !important;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.sh-next-show__btn:hover { opacity: 0.88; }
+
+/* ─── ABOUT SECTION ──────────────────────────────────────────────────────── */
+.sh-about {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.sh-section-title {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.8rem;
+  color: #1a2e5a;
+  margin-bottom: 0.75rem;
+}
+.sh-about-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: #3a4e7a;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.sh-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.sh-pill {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.85rem;
+  padding: 5px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.sh-pill--navy { background: #1a2e5a; color: #fff; }
+.sh-pill--red  { background: #e84d2a; color: #fff; }
+.sh-pill--teal { background: #2aada8; color: #fff; }
+.sh-pill--gold { background: #f5c842; color: #1a2e5a; }
+
+/* ─── CONNECT CARDS ──────────────────────────────────────────────────────── */
+.sh-connect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .sh-connect-grid { grid-template-columns: 1fr; }
+}
+.sh-connect-card {
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none !important;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  flex-wrap: wrap;
+}
+.sh-connect-card--facebook { background: #1877f2; }
+.sh-connect-card--teal     { background: #2aada8; }
+.sh-connect-card__icon { font-size: 1.6rem; flex-shrink: 0; }
+.sh-connect-card__text { flex: 1; }
+.sh-connect-card__text strong {
+  display: block;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.sh-connect-card__text span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+.sh-connect-card__arrow {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.2rem;
+  margin-left: auto;
 }
 
-/* Cast image styling */
-.cast-image {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: block;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border: 3px solid rgba(255,255,255,0.2);
-    object-fit: cover;
-    aspect-ratio: 1/1;
+/* MailerLite inline form */
+.sh-ml-form {
+  display: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+.sh-ml-form.open { display: block; }
+.sh-ml-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sh-ml-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.55rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+}
+.sh-ml-submit {
+  background: #f5c842;
+  color: #1a2e5a;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sh-ml-msg {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  min-height: 1.2em;
+  padding-left: 2px;
 }
 
-/* Cast section title */
-.section-title {
-    font-family: "Luckiest Guy", sans-serif;
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+/* ─── CAST SECTION ───────────────────────────────────────────────────────── */
+.sh-cast-section {
+  background: #fff;
+  padding: 3rem 0;
+}
+.sh-cast-section .sh-section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.sh-cast-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid #e4ddd0;
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.25s ease;
+}
+.sh-cast-card:hover { transform: translateY(-4px); }
+.sh-cast-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-radius: 0;
+}
+.sh-cast-card__body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+.sh-cast-card__name {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.1rem;
+  color: #1a2e5a;
+  margin-bottom: 0.35rem;
+}
+.sh-cast-card__bio {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: #5a6a8a;
+  line-height: 1.55;
+  margin: 0;
 }
 
-/* Cast names */
-.feature h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: white;
-}
-
-/* Cast bios */
-.feature p {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.5;
-}
-
-/* Footer customization */
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
 .td-footer {
-    background-color: #2a2a2a;
-    padding: 2rem 0;
-    color: white;
-    border-top: 3px solid rgba(255,255,255,0.1);
+  background-color: #1a2e5a;
+  padding: 2rem 0;
+  color: #fff;
+  border-top: 3px solid rgba(255,255,255,0.1);
 }
-
 .td-footer__copyright {
-    font-family: "Luckiest Guy", sans-serif;
-    font-size: 1rem;
-    color: white;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1rem;
+  color: #fff;
 }
-
 .td-footer__links-list {
-    display: flex;
-    gap: 1.25rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
 .td-footer__links-item a {
-    color: white;
-    font-size: 1.25rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block;
+  color: #fff;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
-
 .td-footer__links-item a:hover {
-    color: #f8c630;
-    transform: scale(1.2);
-}
-
-/* Fix tooltip width for email address */
-.tooltip-inner {
-    max-width: 300px !important; /* Wider tooltip */
-    font-size: 0.85rem !important; /* Slightly smaller font */
+  color: #f5c842;
+  transform: scale(1.2);
 }
