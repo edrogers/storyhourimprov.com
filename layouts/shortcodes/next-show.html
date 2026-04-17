@@ -1,0 +1,110 @@
+<div class="sh-next-show-wrapper">
+  <div class="sh-next-show" id="sh-next-show">
+    <div class="sh-next-show__inner">
+      <div class="sh-next-show__label">Next Show</div>
+      <div class="sh-next-show__title" id="sh-show-name">Loading...</div>
+      <div class="sh-next-show__details" id="sh-show-details">
+        <span>Fetching upcoming show info...</span>
+      </div>
+    </div>
+    <a class="sh-next-show__btn" href="https://www.tickettailor.com/events/storyhourimprov/">
+      Buy Tickets &rarr;
+    </a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nameEl    = document.getElementById('sh-show-name');
+  var detailsEl = document.getElementById('sh-show-details');
+
+  // Replace YOUR_TT_API_KEY with the real read-only key from Ticket Tailor
+  var TT_API_KEY = 'YOUR_TT_API_KEY';
+
+  fetch('https://api.tickettailor.com/v1/events?status=published&limit=10', {
+    headers: {
+      'Authorization': 'Basic ' + btoa(TT_API_KEY + ':'),
+      'Accept': 'application/json'
+    }
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var now = Date.now() / 1000;
+    var events = (data.data || []).filter(function(e) {
+      return e.start && e.start.unix > now;
+    });
+    events.sort(function(a, b) { return a.start.unix - b.start.unix; });
+    var next = events[0];
+
+    if (next) {
+      var d     = new Date(next.start.unix * 1000);
+      var date  = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'America/Chicago' });
+      var time  = d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', timeZone:'America/Chicago' });
+      var venue = (next.venue && next.venue.name) ? next.venue.name : 'Aubergine &middot; 1226 Williamson St, Madison WI';
+      nameEl.textContent = next.name || 'Story Hour: The Improv Musical';
+      detailsEl.innerHTML =
+        '<span>' + date + '</span>' +
+        '<span>' + time + '</span>' +
+        '<span>' + venue + '</span>';
+    } else {
+      nameEl.textContent = 'No upcoming shows yet — check back soon!';
+      detailsEl.innerHTML = '<span>Follow us on Facebook for announcements.</span>';
+    }
+  })
+  .catch(function() {
+    nameEl.textContent = 'Story Hour: The Improv Musical';
+    detailsEl.innerHTML = '<span>Aubergine &middot; 1226 Williamson St, Madison WI</span>';
+  });
+})();
+
+// MailerLite signup
+// Replace YOUR_MAILERLITE_API_KEY and YOUR_GROUP_ID with real values
+var ML_API_KEY  = 'YOUR_MAILERLITE_API_KEY';
+var ML_GROUP_ID = 'YOUR_GROUP_ID';
+
+function shToggleML() {
+  var form  = document.getElementById('sh-ml-form');
+  var arrow = document.getElementById('sh-ml-arrow');
+  if (!form) return;
+  var opening = !form.classList.contains('open');
+  form.classList.toggle('open', opening);
+  if (arrow) arrow.innerHTML = opening ? '&uarr;' : '&rarr;';
+  if (opening) {
+    setTimeout(function() {
+      var input = document.getElementById('sh-ml-email');
+      if (input) input.focus();
+    }, 50);
+  }
+}
+
+function shSubmitML() {
+  var emailEl = document.getElementById('sh-ml-email');
+  var msgEl   = document.getElementById('sh-ml-msg');
+  if (!emailEl || !msgEl) return;
+  var email = emailEl.value.trim();
+  if (!email || email.indexOf('@') === -1) {
+    msgEl.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  msgEl.textContent = 'Signing you up...';
+  fetch('https://connect.mailerlite.com/api/subscribers', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + ML_API_KEY
+    },
+    body: JSON.stringify({ email: email, groups: [ML_GROUP_ID] })
+  })
+  .then(function(r) {
+    if (r.status === 200 || r.status === 201) {
+      msgEl.textContent = 'You are on the list! See you at the show.';
+      emailEl.value = '';
+    } else {
+      msgEl.textContent = 'Something went wrong - please try again!';
+    }
+  })
+  .catch(function() {
+    msgEl.textContent = 'Something went wrong - please try again!';
+  });
+}
+</script>
