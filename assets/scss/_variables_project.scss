@@ -52,7 +52,9 @@
 #td-cover-block-0,
 #td-cover-block-0 .td-cover-block__contents,
 #td-cover-block-0 .container,
-#td-cover-block-0 .row {
+#td-cover-block-0 .row,
+#td-cover-block-0 .col,
+#td-cover-block-0 [class*="col-"] {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   margin-top: 0 !important;
@@ -117,6 +119,8 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 .sh-btn-primary {
   background: #e84d2a;
