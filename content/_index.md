@@ -2,6 +2,8 @@
 title: Story Hour
 ---
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="min" >}}
+<img class="sh-hero-photo sh-hero-photo--left" src="/images/show-photo-1.jpg" alt="Story Hour performers on stage">
+<img class="sh-hero-photo sh-hero-photo--right" src="/images/show-photo-2.jpg" alt="Story Hour performers on stage">
 <div class="sh-hero-logo">
   <img src="/images/Story_Hour_Logo_Design.png" alt="Story Hour: The Improv Musical logo">
 </div>
