@@ -29,16 +29,16 @@ jobs:
       - name: Extract next upcoming show
         run: |
           mkdir -p static/data
-          jq --argjson now "$(date +%s)" '
-            [ .data[] | select((.start.iso | fromdateiso8601) > $now) ]
-            | sort_by(.start.iso | fromdateiso8601)
+          jq --arg today "$(date -u +%Y-%m-%d)" '
+            [ .data[] | select(.start.date >= $today) ]
+            | sort_by(.start.date)
             | first
             | if . then {
                 name: .name,
-                start_unix: (.start.iso | fromdateiso8601),
+                start_iso: .start.iso,
                 venue: (.venue.name // "Aubergine \u00b7 1226 Williamson St, Madison WI")
               } else {
-                name: null, start_unix: null, venue: null
+                name: null, start_iso: null, venue: null
               } end
           ' /tmp/tt_events.json > static/data/next-show.json
 
