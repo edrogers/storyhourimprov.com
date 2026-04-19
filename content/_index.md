@@ -33,6 +33,12 @@ title: Story Hour
 </div>
 {{% /blocks/lead %}}
 
+<div class="sh-crowd-band">
+  <div class="sh-crowd-band__overlay">
+    <p class="sh-crowd-band__quote">Every show is a one-of-a-kind adventure.</p>
+  </div>
+</div>
+
 {{< blocks/section color="white" >}}
 <div class="sh-connect-grid">
   <a class="sh-connect-card sh-connect-card--facebook" href="https://www.facebook.com/storyhourimprov/" target="_blank">
