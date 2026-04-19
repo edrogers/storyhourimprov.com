@@ -87,14 +87,14 @@
 .sh-hero-photo--left {
   left: clamp(1.5rem, 7vw, 10%);
   background-image: url('/images/show-photo-2.jpg');
-  background-size: 130%;
-  background-position: center 30%;
+  background-size: cover;
+  background-position: center center;
 }
 .sh-hero-photo--right {
   right: clamp(1.5rem, 7vw, 10%);
   background-image: url('/images/show-photo-1.jpg');
-  background-size: 220%;
-  background-position: center 25%;
+  background-size: cover;
+  background-position: center center;
 }
 @media (max-width: 900px) {
   .sh-hero-photo { display: none; }
