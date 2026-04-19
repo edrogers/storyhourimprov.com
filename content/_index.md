@@ -36,7 +36,7 @@ title: Story Hour
 {{< blocks/section color="white" >}}
 <div class="sh-connect-grid">
   <a class="sh-connect-card sh-connect-card--facebook" href="https://www.facebook.com/storyhourimprov/" target="_blank">
-    <div class="sh-connect-card__icon">f</div>
+    <div class="sh-connect-card__icon"><i class="fab fa-facebook-f"></i></div>
     <div class="sh-connect-card__text">
       <strong>Follow us on Facebook</strong>
       <span>Show announcements &amp; updates</span>
@@ -45,7 +45,7 @@ title: Story Hour
   </a>
   <div class="sh-connect-card sh-connect-card--teal">
     <div class="sh-card-header">
-      <div class="sh-connect-card__icon">@</div>
+      <div class="sh-connect-card__icon"><i class="fas fa-envelope"></i></div>
       <div class="sh-connect-card__text">
         <strong>Join our mailing list</strong>
         <span>Be first to know about new shows</span>
