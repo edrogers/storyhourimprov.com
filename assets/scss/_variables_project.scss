@@ -436,13 +436,6 @@
   user-select: none;
   z-index: 3;
 }
-.sh-deco--star {
-  width: clamp(60px, 7vw, 95px);
-  top: 10%;
-  left: clamp(1rem, 3vw, 4%);
-  animation: sh-float 4.5s ease-in-out infinite;
-  animation-delay: 0.7s;
-}
 .sh-deco--rocket {
   width: clamp(55px, 6vw, 85px);
   top: 8%;
@@ -452,7 +445,7 @@
 .sh-deco--monster {
   width: clamp(65px, 7vw, 100px);
   top: 50%;
-  right: clamp(1.5rem, 5vw, 7%);
+  left: clamp(1.5rem, 5vw, 7%);
   animation: sh-float-monster 4s ease-in-out infinite;
   animation-delay: 0.4s;
 }
@@ -465,10 +458,9 @@
   opacity: 0.75;
 }
 @media (max-width: 768px) {
-  .sh-deco--star,
   .sh-deco--rocket,
   .sh-deco--notes { display: none; }
-  .sh-deco--monster { width: 55px; right: 1rem; }
+  .sh-deco--monster { width: 55px; left: 1rem; }
 }
 
 .sh-cast-section {
@@ -570,28 +562,37 @@
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
 .td-footer {
-  background-color: #1a2e5a;
-  padding: 2rem 0;
+  background-color: #1a2e5a !important;
+  padding: 1.5rem 0;
   color: #fff;
-  border-top: 3px solid rgba(255,255,255,0.1);
+  border-top: 3px solid rgba(255,255,255,0.15);
+}
+.td-footer .row {
+  align-items: center;
 }
 .td-footer__copyright {
   font-family: 'Fredoka One', sans-serif;
   font-size: 1rem;
-  color: #fff;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.02em;
+  text-align: center;
+  display: block;
 }
 .td-footer__links-list {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: flex-start;
+  align-items: center;
 }
 .td-footer__links-item a {
-  color: #fff;
-  font-size: 1.25rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.3rem;
   transition: transform 0.3s ease, color 0.3s ease;
   display: inline-block;
+  line-height: 1;
 }
 .td-footer__links-item a:hover {
   color: #f5c842;
@@ -600,7 +601,8 @@
 .td-footer__tagline {
   font-family: 'Fredoka One', sans-serif;
   font-size: 1rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.02em;
   text-align: right;
   display: block;
 }
