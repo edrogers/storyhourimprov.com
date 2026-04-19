@@ -20,7 +20,7 @@ jobs:
           curl -sf \
             -H "Authorization: Basic $(echo -n "${TT_API_KEY}:" | base64 -w0)" \
             -H "Accept: application/json" \
-            "https://api.tickettailor.com/v1/events?status=published&limit=10" \
+            "https://api.tickettailor.com/v1/events?status=published&limit=100" \
             > /tmp/tt_events.json
 
       - name: Debug raw API response
@@ -30,12 +30,12 @@ jobs:
         run: |
           mkdir -p static/data
           jq --argjson now "$(date +%s)" '
-            [ .data[] | select(.start.unix > $now) ]
-            | sort_by(.start.unix)
+            [ .data[] | select((.start.iso | fromdateiso8601) > $now) ]
+            | sort_by(.start.iso | fromdateiso8601)
             | first
             | if . then {
                 name: .name,
-                start_unix: .start.unix,
+                start_unix: (.start.iso | fromdateiso8601),
                 venue: (.venue.name // "Aubergine \u00b7 1226 Williamson St, Madison WI")
               } else {
                 name: null, start_unix: null, venue: null
