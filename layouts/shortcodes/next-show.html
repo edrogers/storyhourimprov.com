@@ -1,0 +1,43 @@
+<div class="sh-next-show-wrapper">
+  <div class="sh-next-show" id="sh-next-show">
+    <div class="sh-next-show__inner">
+      <div class="sh-next-show__label">Next Show</div>
+      <div class="sh-next-show__title" id="sh-show-name">Loading...</div>
+      <div class="sh-next-show__details" id="sh-show-details">
+        <span>Fetching upcoming show info...</span>
+      </div>
+    </div>
+    <a class="sh-next-show__btn" href="https://www.tickettailor.com/events/storyhourimprov/">
+      Buy Tickets &rarr;
+    </a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nameEl    = document.getElementById('sh-show-name');
+  var detailsEl = document.getElementById('sh-show-details');
+
+  fetch('/data/next-show.json')
+  .then(function(r) { return r.json(); })
+  .then(function(show) {
+    if (show.name) {
+      var d = new Date(show.start_iso);
+      var date = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'America/Chicago' });
+      var time = d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', timeZone:'America/Chicago' });
+      nameEl.textContent = show.name;
+      detailsEl.innerHTML =
+        '<span>' + date + '</span>' +
+        '<span>' + time + '</span>' +
+        '<span>' + show.venue + '</span>';
+    } else {
+      nameEl.textContent = 'No upcoming shows yet — check back soon!';
+      detailsEl.innerHTML = '<span>Follow us on Facebook for announcements.</span>';
+    }
+  })
+  .catch(function() {
+    nameEl.textContent = 'Story Hour: The Improv Musical';
+    detailsEl.innerHTML = '<span>Aubergine &middot; 1226 Williamson St, Madison WI</span>';
+  });
+})();
+</script>

@@ -1,26 +1,55 @@
 ---
 title: Story Hour
 ---
-
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
-<p class="lead mt-5">An interactive adventure in musical theater!</p>
-
-<div class="text-center mt-5">
-  <a class="btn btn-lg px-5 py-3 mb-4" href="https://www.tickettailor.com/events/storyhourimprov/" target="_blank" style="background-color: #f8c630; color: #000; font-weight: bold; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-    Buy Tickets <i class="far fa-ticket ms-2"></i>
+<div class="sh-hero-logo">
+  <img src="/images/Story_Hour_Logo_Design.png" alt="Story Hour: The Improv Musical logo">
+</div>
+<p class="sh-hero-tagline">An interactive adventure in musical theater!</p>
+<div class="sh-hero-btns">
+  <a class="sh-btn-primary" href="https://www.tickettailor.com/events/storyhourimprov/" target="_blank">
+    Get Tickets
+  </a>
+  <a class="sh-btn-outline" href="#cast">
+    Meet the Cast
   </a>
 </div>
-{{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
+{{< next-show >}}
 
-{{% blocks/lead color="primary" %}}
-Join us for "Story Hour: The Improv Musical," a delightful event designed for families with children ages 10 and under! Every performance is centered on a different children's book. We invite you to read the book with your child beforehand. During the show, we'll gather creative input from our young readers and transform their ideas into an on-the-spot musical performance.
-
-Expect a fun, funny, engaging, and delightfully silly experience that the whole family will love. Featuring an experienced and talented Madison-based cast, this unique event is a celebration of storytelling, creativity, and the magic of improvisation.
+{{% blocks/lead color="white" %}}
+<div class="sh-about">
+  <h2 class="sh-section-title">What happens at Story Hour?</h2>
+  <p class="sh-about-text">Every show is centered on a different children's book. We'll read it together, get ideas from your kids, and then watch everything get transformed into a one-of-a-kind musical right before your eyes. Funny, silly, and totally unique every time.</p>
+  <div class="sh-pills">
+    <span class="sh-pill sh-pill--navy">Ages 10 &amp; under</span>
+    <span class="sh-pill sh-pill--red">Live improv</span>
+    <span class="sh-pill sh-pill--teal">Original music</span>
+    <span class="sh-pill sh-pill--gold">Family-friendly</span>
+  </div>
+</div>
 {{% /blocks/lead %}}
 
+{{< blocks/section color="white" >}}
+<div class="sh-connect-grid">
+  <a class="sh-connect-card sh-connect-card--facebook" href="https://www.facebook.com/storyhourimprov/" target="_blank">
+    <div class="sh-connect-card__icon">f</div>
+    <div class="sh-connect-card__text">
+      <strong>Follow us on Facebook</strong>
+      <span>Show announcements &amp; updates</span>
+    </div>
+    <div class="sh-connect-card__arrow">&rarr;</div>
+  </a>
+  <div class="sh-connect-card sh-connect-card--teal">
+    <div class="sh-connect-card__icon">@</div>
+    <div class="sh-connect-card__text">
+      <strong>Join our mailing list</strong>
+      <span>Be first to know about new shows</span>
+    </div>
+    <div class="ml-embedded" data-form="ezflWY"></div>
+  </div>
+</div>
+{{< /blocks/section >}}
 
-<!-- This uses the shortcode, not the partial. If you want to edit the cast grid,
-     make changes to layouts/shortcodes/cast-grid.html -->
 {{< cast-grid >}}
