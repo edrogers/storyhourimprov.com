@@ -42,10 +42,12 @@ title: Story Hour
     <div class="sh-connect-card__arrow">&rarr;</div>
   </a>
   <div class="sh-connect-card sh-connect-card--teal">
-    <div class="sh-connect-card__icon">@</div>
-    <div class="sh-connect-card__text">
-      <strong>Join our mailing list</strong>
-      <span>Be first to know about new shows</span>
+    <div class="sh-card-header">
+      <div class="sh-connect-card__icon">@</div>
+      <div class="sh-connect-card__text">
+        <strong>Join our mailing list</strong>
+        <span>Be first to know about new shows</span>
+      </div>
     </div>
     <div class="ml-embedded" data-form="ezflWY"></div>
   </div>

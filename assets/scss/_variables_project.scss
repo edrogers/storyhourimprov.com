@@ -250,6 +250,7 @@
   gap: 1rem;
   max-width: 860px;
   margin: 0 auto;
+  align-items: start;
 }
 @media (max-width: 540px) {
   .sh-connect-grid { grid-template-columns: 1fr; }
@@ -258,19 +259,29 @@
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
   text-decoration: none !important;
   cursor: pointer;
   border: none;
   width: 100%;
   text-align: left;
   font-family: 'Nunito', sans-serif;
-  flex-wrap: wrap;
 }
-.sh-connect-card--facebook { background: #1877f2; }
-.sh-connect-card--teal     { background: #2aada8; }
-.sh-connect-card__icon { font-size: 1.6rem; flex-shrink: 0; }
+.sh-connect-card--facebook {
+  background: #1877f2;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-height: 5rem;
+}
+.sh-connect-card--teal { background: #2aada8; }
+.sh-connect-card__icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-right: 0.25rem;
+}
 .sh-connect-card__text { flex: 1; }
 .sh-connect-card__text strong {
   display: block;
@@ -288,6 +299,28 @@
   color: rgba(255,255,255,0.7);
   font-size: 1.2rem;
   margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Mailing list card header row */
+.sh-connect-card--teal .sh-connect-card__icon,
+.sh-connect-card--teal .sh-connect-card__text {
+  display: inline-flex;
+  align-items: center;
+}
+.sh-connect-card--teal > :first-child,
+.sh-connect-card--teal > :nth-child(2) {
+  align-self: auto;
+}
+/* Row wrapper for teal card header */
+.sh-connect-card--teal {
+  flex-direction: column;
+}
+.sh-connect-card--teal .sh-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 /* MailerLite inline form */
@@ -383,38 +416,47 @@
   padding-bottom: 1.5rem !important;
 }
 
-/* Connect cards themselves — tighter internal padding */
-.sh-connect-card {
-  padding: 0.75rem 1rem;
-  align-items: flex-start;
-}
-
-/* MailerLite embed — hide redundant title/description, tighten padding */
+/* MailerLite embed — hide title/description, brand the button, tighten padding */
 .sh-connect-card .ml-embedded {
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 .sh-connect-card .ml-form-embedWrapper {
   background-color: transparent !important;
   border-radius: 10px !important;
   overflow: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 .sh-connect-card .ml-form-embedBody {
-  padding: 0.6rem 0.75rem 0 !important;
+  padding: 0.5rem 0 0 !important;
 }
 .sh-connect-card .ml-form-embedContent {
   display: none !important;
 }
 .sh-connect-card .ml-form-fieldRow {
-  margin-bottom: 0.4rem !important;
+  margin-bottom: 0.35rem !important;
 }
-.sh-connect-card .ml-form-embedSubmit {
-  margin-bottom: 0.6rem !important;
-}
-.sh-connect-card .ml-form-embedSubmit button {
-  padding: 0.4rem !important;
+.sh-connect-card .ml-form-fieldRow input {
+  padding: 0.5rem 0.75rem !important;
   font-size: 0.9rem !important;
   border-radius: 8px !important;
+}
+.sh-connect-card .ml-form-embedSubmit {
+  margin-bottom: 0 !important;
+}
+.sh-connect-card .ml-form-embedSubmit button.primary {
+  background-color: #e84d2a !important;
+  border-color: #e84d2a !important;
+  padding: 0.5rem !important;
+  font-size: 0.95rem !important;
+  font-family: 'Fredoka One', sans-serif !important;
+  border-radius: 8px !important;
+  letter-spacing: 0.01em;
+}
+.sh-connect-card .ml-form-embedSubmit button.primary:hover {
+  background-color: #c43d1f !important;
+  border-color: #c43d1f !important;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
