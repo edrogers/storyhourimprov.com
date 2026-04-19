@@ -1,7 +1,7 @@
 ---
 title: Story Hour
 ---
-{{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
+{{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="min" >}}
 <div class="sh-hero-logo">
   <img src="/images/Story_Hour_Logo_Design.png" alt="Story Hour: The Improv Musical logo">
 </div>

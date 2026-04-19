@@ -46,9 +46,12 @@
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 #td-cover-block-0 {
   background-color: #1a2e5a !important;
-  /* decorative circles */
   position: relative;
   overflow: hidden;
+}
+#td-cover-block-0 .td-cover-block__contents {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
 }
 #td-cover-block-0::before {
   content: '';
@@ -356,6 +359,22 @@
   color: #5a6a8a;
   line-height: 1.55;
   margin: 0;
+}
+
+/* ─── SPACING OVERRIDES ──────────────────────────────────────────────────── */
+/* "What happens at Story Hour?" lead block */
+.td-lead {
+  padding: 2rem 0 !important;
+}
+
+/* Connect cards section */
+.td-section:has(.sh-connect-grid) {
+  padding: 1.5rem 0 !important;
+}
+
+/* Connect cards themselves — tighter internal padding */
+.sh-connect-card {
+  padding: 0.75rem 1rem;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
