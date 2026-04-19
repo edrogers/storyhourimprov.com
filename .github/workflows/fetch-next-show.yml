@@ -23,9 +23,6 @@ jobs:
             "https://api.tickettailor.com/v1/events?status=published&limit=100" \
             > /tmp/tt_events.json
 
-      - name: Debug raw API response
-        run: jq '.' /tmp/tt_events.json
-
       - name: Extract next upcoming show
         run: |
           mkdir -p static/data
