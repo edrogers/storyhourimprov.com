@@ -5,3 +5,4 @@ package-lock.json
 .hugo_build.lock
 _vendor
 content_backup
+.env

@@ -1,0 +1,52 @@
+name: Fetch next show from Ticket Tailor
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # 6am CDT daily
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch events from Ticket Tailor
+        env:
+          TT_API_KEY: ${{ secrets.TICKETTAILOR_API_KEY }}
+        run: |
+          curl -sf \
+            -H "Authorization: Basic $(echo -n "${TT_API_KEY}:" | base64 -w0)" \
+            -H "Accept: application/json" \
+            "https://api.tickettailor.com/v1/events?status=published&limit=100" \
+            > /tmp/tt_events.json
+
+      - name: Extract next upcoming show
+        run: |
+          mkdir -p static/data
+          jq --arg today "$(date -u +%Y-%m-%d)" '
+            [ .data[] | select(.start.date >= $today) ]
+            | sort_by(.start.date)
+            | first
+            | if . then {
+                name: .name,
+                start_iso: .start.iso,
+                venue: (.venue.name // "Aubergine \u00b7 1226 Williamson St, Madison WI")
+              } else {
+                name: null, start_iso: null, venue: null
+              } end
+          ' /tmp/tt_events.json > static/data/next-show.json
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/data/next-show.json
+          if git diff --staged --quiet; then
+            echo "No change"
+          else
+            git commit -m "Update next show data"
+            git push
+          fi
