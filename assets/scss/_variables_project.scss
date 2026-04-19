@@ -250,77 +250,87 @@
   gap: 1rem;
   max-width: 860px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 @media (max-width: 540px) {
   .sh-connect-grid { grid-template-columns: 1fr; }
 }
-.sh-connect-card {
+
+/* Facebook card — horizontal, content centered */
+.sh-connect-card--facebook {
+  background: #1877f2;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none !important;
+  overflow: visible;
+}
+.sh-connect-card--facebook .sh-connect-card__icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+.sh-connect-card--facebook .sh-connect-card__text { flex: 1; }
+.sh-connect-card--facebook .sh-connect-card__arrow {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Mailing list card — vertical stack */
+.sh-connect-card--teal {
+  background: #2aada8;
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.25rem;
-  text-decoration: none !important;
-  cursor: pointer;
+  gap: 0;
   border: none;
   width: 100%;
-  text-align: left;
   font-family: 'Nunito', sans-serif;
 }
-.sh-connect-card--facebook {
-  background: #1877f2;
+.sh-card-header {
+  display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
-  min-height: 5rem;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
 }
-.sh-connect-card--teal { background: #2aada8; }
-.sh-connect-card__icon {
-  font-size: 1.6rem;
+.sh-card-header .sh-connect-card__icon {
+  font-size: 1.4rem;
   flex-shrink: 0;
-  margin-right: 0.25rem;
+  color: #fff;
 }
-.sh-connect-card__text { flex: 1; }
-.sh-connect-card__text strong {
+.sh-card-header .sh-connect-card__text strong {
   display: block;
   font-family: 'Fredoka One', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 1px;
+  white-space: nowrap;
+}
+.sh-card-header .sh-connect-card__text span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Shared text styles for Facebook card */
+.sh-connect-card--facebook .sh-connect-card__text strong {
+  display: block;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.05rem;
   color: #fff;
   margin-bottom: 2px;
 }
-.sh-connect-card__text span {
+.sh-connect-card--facebook .sh-connect-card__text span {
   font-size: 0.82rem;
   color: rgba(255,255,255,0.85);
   font-weight: 600;
-}
-.sh-connect-card__arrow {
-  color: rgba(255,255,255,0.7);
-  font-size: 1.2rem;
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-/* Mailing list card header row */
-.sh-connect-card--teal .sh-connect-card__icon,
-.sh-connect-card--teal .sh-connect-card__text {
-  display: inline-flex;
-  align-items: center;
-}
-.sh-connect-card--teal > :first-child,
-.sh-connect-card--teal > :nth-child(2) {
-  align-self: auto;
-}
-/* Row wrapper for teal card header */
-.sh-connect-card--teal {
-  flex-direction: column;
-}
-.sh-connect-card--teal .sh-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.25rem;
 }
 
 /* MailerLite inline form */
@@ -417,46 +427,48 @@
 }
 
 /* MailerLite embed — hide title/description, brand the button, tighten padding */
-.sh-connect-card .ml-embedded {
+/* MailerLite embed */
+.sh-connect-card--teal .ml-embedded {
   width: 100%;
-  margin-top: 0.25rem;
 }
-.sh-connect-card .ml-form-embedWrapper {
+.sh-connect-card--teal .ml-form-embedContainer,
+.sh-connect-card--teal .ml-form-embedWrapper {
   background-color: transparent !important;
-  border-radius: 10px !important;
-  overflow: hidden;
   width: 100% !important;
   max-width: 100% !important;
 }
-.sh-connect-card .ml-form-embedBody {
-  padding: 0.5rem 0 0 !important;
+.sh-connect-card--teal .ml-form-embedBody {
+  padding: 0 0 0.5rem !important;
 }
-.sh-connect-card .ml-form-embedContent {
+.sh-connect-card--teal .ml-form-embedContent {
   display: none !important;
 }
-.sh-connect-card .ml-form-fieldRow {
-  margin-bottom: 0.35rem !important;
+.sh-connect-card--teal .ml-form-fieldRow {
+  margin-bottom: 0.4rem !important;
 }
-.sh-connect-card .ml-form-fieldRow input {
+.sh-connect-card--teal .ml-form-fieldRow input[type="email"] {
   padding: 0.5rem 0.75rem !important;
   font-size: 0.9rem !important;
   border-radius: 8px !important;
 }
-.sh-connect-card .ml-form-embedSubmit {
+.sh-connect-card--teal .ml-form-embedSubmit {
   margin-bottom: 0 !important;
 }
-.sh-connect-card .ml-form-embedSubmit button.primary {
+/* Broad button selector to beat MailerLite's ID-based specificity */
+.sh-connect-card--teal button[type="submit"],
+.sh-connect-card--teal .ml-form-embedSubmit button {
   background-color: #e84d2a !important;
-  border-color: #e84d2a !important;
-  padding: 0.5rem !important;
+  background: #e84d2a !important;
+  border: none !important;
+  padding: 0.55rem !important;
   font-size: 0.95rem !important;
   font-family: 'Fredoka One', sans-serif !important;
   border-radius: 8px !important;
-  letter-spacing: 0.01em;
 }
-.sh-connect-card .ml-form-embedSubmit button.primary:hover {
+.sh-connect-card--teal button[type="submit"]:hover,
+.sh-connect-card--teal .ml-form-embedSubmit button:hover {
   background-color: #c43d1f !important;
-  border-color: #c43d1f !important;
+  background: #c43d1f !important;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
