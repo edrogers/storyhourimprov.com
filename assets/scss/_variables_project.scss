@@ -49,13 +49,14 @@
   position: relative;
   overflow: hidden;
 }
-#td-cover-block-0 .td-cover-block__contents {
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-}
-#td-cover-block-0 .container {
+#td-cover-block-0,
+#td-cover-block-0 .td-cover-block__contents,
+#td-cover-block-0 .container,
+#td-cover-block-0 .row {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 #td-cover-block-0::before {
   content: '';
@@ -87,7 +88,7 @@
 .sh-hero-logo {
   position: relative;
   z-index: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 .sh-hero-logo img {
   width: 160px;
@@ -103,7 +104,7 @@
   font-size: 1.15rem;
   font-weight: 700;
   color: #8fadd4;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   position: relative;
   z-index: 1;
 }
