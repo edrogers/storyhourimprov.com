@@ -386,6 +386,35 @@
 /* Connect cards themselves — tighter internal padding */
 .sh-connect-card {
   padding: 0.75rem 1rem;
+  align-items: flex-start;
+}
+
+/* MailerLite embed — hide redundant title/description, tighten padding */
+.sh-connect-card .ml-embedded {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.sh-connect-card .ml-form-embedWrapper {
+  background-color: transparent !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.sh-connect-card .ml-form-embedBody {
+  padding: 0.6rem 0.75rem 0 !important;
+}
+.sh-connect-card .ml-form-embedContent {
+  display: none !important;
+}
+.sh-connect-card .ml-form-fieldRow {
+  margin-bottom: 0.4rem !important;
+}
+.sh-connect-card .ml-form-embedSubmit {
+  margin-bottom: 0.6rem !important;
+}
+.sh-connect-card .ml-form-embedSubmit button {
+  padding: 0.4rem !important;
+  font-size: 0.9rem !important;
+  border-radius: 8px !important;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
