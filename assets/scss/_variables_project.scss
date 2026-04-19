@@ -50,8 +50,12 @@
   overflow: hidden;
 }
 #td-cover-block-0 .td-cover-block__contents {
-  padding-top: 2.5rem !important;
-  padding-bottom: 2.5rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+#td-cover-block-0 .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 #td-cover-block-0::before {
   content: '';
