@@ -377,14 +377,10 @@
 }
 
 /* ─── SPACING OVERRIDES ──────────────────────────────────────────────────── */
-/* "What happens at Story Hour?" lead block */
-.td-lead {
-  padding: 0.75rem 0 !important;
-}
-
-/* Connect cards section */
-.td-section:has(.sh-connect-grid) {
-  padding: 1.5rem 0 !important;
+/* About section and connect cards section */
+.td-box {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 /* Connect cards themselves — tighter internal padding */
