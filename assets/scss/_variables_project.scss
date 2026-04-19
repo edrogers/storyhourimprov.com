@@ -451,7 +451,8 @@
 }
 .sh-deco--notes {
   width: clamp(50px, 5vw, 72px);
-  top: 2rem;
+  bottom: 2rem;
+  top: auto;
   right: clamp(1rem, 3vw, 3%);
   animation: sh-float 5s ease-in-out infinite;
   animation-delay: 1.1s;
@@ -465,8 +466,22 @@
 
 .sh-cast-section {
   background: #fdf9f0;
-  padding: 3rem 0;
+  padding-bottom: 3rem;
   position: relative;
+}
+.sh-cast-group-photo {
+  width: 100%;
+  height: clamp(260px, 35vw, 420px);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    filter: grayscale(100%);
+  }
 }
 .sh-cast-section .sh-section-title {
   text-align: center;
