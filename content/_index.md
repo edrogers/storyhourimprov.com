@@ -2,6 +2,8 @@
 title: Story Hour
 ---
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="min" >}}
+<img class="sh-deco sh-deco--star" src="/images/deco-star.png" alt="" aria-hidden="true">
+<img class="sh-deco sh-deco--rocket" src="/images/deco-rocket.png" alt="" aria-hidden="true">
 <div class="sh-hero-photo sh-hero-photo--left" role="img" aria-label="Story Hour performers on stage"></div>
 <div class="sh-hero-photo sh-hero-photo--right" role="img" aria-label="Story Hour performers on stage"></div>
 <div class="sh-hero-logo">
@@ -37,6 +39,7 @@ title: Story Hour
   <div class="sh-crowd-band__overlay">
     <p class="sh-crowd-band__quote">Every show is a one-of-a-kind adventure.</p>
   </div>
+  <img class="sh-deco sh-deco--monster" src="/images/deco-monster.png" alt="" aria-hidden="true">
 </div>
 
 {{< blocks/section color="white" >}}
