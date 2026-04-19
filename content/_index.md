@@ -3,7 +3,7 @@ title: Story Hour
 ---
 
 {{< blocks/cover title="Story Hour: The Improv Musical" image_anchor="top" height="full" >}}
-<p class="lead mt-5">An interactive adventure in musical theater!</p>
+<p class="lead mt-5">An interactive adventure in musical theater — for the whole family!</p>
 
 <div class="text-center mt-5">
   <a class="btn btn-lg px-5 py-3 mb-4" href="https://www.tickettailor.com/events/storyhourimprov/" target="_blank" style="background-color: #f8c630; color: #000; font-weight: bold; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
