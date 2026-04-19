@@ -41,20 +41,21 @@ title: Story Hour
     </div>
     <div class="sh-connect-card__arrow">&rarr;</div>
   </a>
-  <div class="sh-connect-card sh-connect-card--teal" id="sh-ml-card" onclick="shToggleML()">
+  <div class="sh-connect-card sh-connect-card--teal">
     <div class="sh-connect-card__icon">@</div>
     <div class="sh-connect-card__text">
       <strong>Join our mailing list</strong>
       <span>Be first to know about new shows</span>
     </div>
-    <div class="sh-connect-card__arrow" id="sh-ml-arrow">&rarr;</div>
-    <div class="sh-ml-form" id="sh-ml-form">
-      <div class="sh-ml-row">
-        <input class="sh-ml-input" type="email" id="sh-ml-email" placeholder="your@email.com" onclick="event.stopPropagation()">
-        <button class="sh-ml-submit" onclick="event.stopPropagation();shSubmitML()">Sign me up!</button>
-      </div>
-      <div class="sh-ml-msg" id="sh-ml-msg"></div>
-    </div>
+    <!-- MailerLite Universal -->
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '1376346');
+    </script>
+    <!-- End MailerLite Universal -->
   </div>
 </div>
 {{< /blocks/section >}}
