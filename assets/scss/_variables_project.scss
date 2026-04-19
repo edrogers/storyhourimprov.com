@@ -61,6 +61,9 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+#td-cover-block-0 .td-cover-block__contents {
+  padding-bottom: 0.5in !important;
+}
 #td-cover-block-0::before {
   content: '';
   position: absolute;
