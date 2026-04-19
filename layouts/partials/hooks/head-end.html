@@ -8,6 +8,28 @@
 </script>
 <!-- End MailerLite Universal -->
 
+<!-- Override MailerLite button styles after dynamic render -->
+<script>
+(function() {
+  function styleMLButton() {
+    document.querySelectorAll('.sh-connect-card--teal button[type="submit"]').forEach(function(btn) {
+      btn.style.setProperty('background-color', '#e84d2a', 'important');
+      btn.style.setProperty('background',        '#e84d2a', 'important');
+      btn.style.setProperty('border-radius',     '50px',    'important');
+      btn.style.setProperty('font-family',       'Fredoka One, sans-serif', 'important');
+      btn.style.setProperty('border',            'none',    'important');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    styleMLButton();
+    var card = document.querySelector('.sh-connect-card--teal');
+    if (card) {
+      new MutationObserver(styleMLButton).observe(card, { childList: true, subtree: true });
+    }
+  });
+})();
+</script>
+
 <!-- Custom styles to fix navbar white bar issue -->
 <style>
 /* Super aggressive overrides to ensure transparent navbar */
